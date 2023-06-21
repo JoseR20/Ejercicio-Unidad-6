@@ -1,0 +1,77 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #333;
+}
+
+.button {
+  background-color: aqua;
+  padding: 2.5rem 7rem;
+  position: relative;
+  border: 1px, solid aqua;
+  border-radius: 30px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.button::before {
+  background-color: aqua;
+  content: "Pasa por encima";
+  position: relative;
+  font-size: small;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 100px;
+  text-shadow: 1px;
+  transition: 0.3s ease;
+  cursor: pointer;
+  opacity: 1;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+}
+
+.button::after {
+  content: "Hecho!";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: small;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 100px;
+  text-shadow: 1px;
+  transition: 0.5s ease;
+  cursor: pointer;
+  opacity: 0;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+}
+
+.button:hover::before {
+  transform: translate(-50%, -50%) scale(3);
+  opacity: 0;
+}
+
+.button:hover::after {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  color: rgb(255, 255, 255);
+}
+.button:hover {
+  background-color: green;
+}
